@@ -72,3 +72,7 @@ goods3_unique = get_real_words(goods3_unique)
 
 def get_real_words(words_set):
     return words_set - inter
+
+
+#This might my interesting and this might be one of the first programme that made by my self
+#Hello ~~~
