@@ -11,6 +11,7 @@ goods3 = []
 #find the unique words of each goods
 goods1_unique = set()
 part = goods1.size() / 10
+#There is no reason that I need 10 groups exactly
 
 for j in range(10):
     for i in range(j * part, (j + 1) * part):
