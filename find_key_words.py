@@ -1,12 +1,20 @@
 import pandas as pd
 import numpy as np
 
+
+#import the csv file of each goods
+
+goods1 = pd.read_csv("")
+goods2 = pd.read_csv("")
+goods3 = pd.read_csv("")
+
+goods1 = goods1['review']
+goods2 = goods2['review']
+goods3 = goods3['review']
+
 #There are three kinds of goods
 
 #define the goods1, goods2, goods3
-goods1 = []
-goods2 = []
-goods3 = []
 
 #find the unique words of each goods
 goods1_unique = set()
@@ -17,8 +25,8 @@ for j in range(10):
     for i in range(j * part, (j + 1) * part):
         a= set()
         for w in goods1[i].split(' '):
-            w_word = ''.join( e for e in w if e.isalnum())
-            w_word = w_word.upper()
+            w_word = ''.join( e for e in w if e.isalnum())#cut off the other noise
+            w_word = w_word.upper()                     #make sure every word is in upper class
             a.add(w_word)
 
     if j == 0:
@@ -64,18 +72,17 @@ for j in range(10):
 #Then we got the intersection of these three goods
 inter = goods1_unique & goods1_unique & goods3_unique
 
-#In this way, we can get the key words of each goods
+#In this way, we can get the key words of each goods, some speciallty of each goods
 def get_real_words(words_set):
     return words_set - inter
+
 goods1_unique = get_real_words(goods1_unique)
 goods2_unique = get_real_words(goods2_unique)
 goods3_unique = get_real_words(goods3_unique)
 
-def get_real_words(words_set):
-    return words_set - inter
+
 
 
 #This might my interesting and this might be one of the first programme that made by my self
 #Hello ~~~
 #Everything is good and cool~
-6565
