@@ -80,9 +80,24 @@ goods1_unique = get_real_words(goods1_unique)
 goods2_unique = get_real_words(goods2_unique)
 goods3_unique = get_real_words(goods3_unique)
 
+#The we can write each of these into txt files
+goods1_file = open("goods1_words", "w")
+for i in goods1_unique:
+    goods1_file.write(i)
+goods1_file.close()
 
+goods_list = ['goods1_unique','goods2_unique','goods3_unique']
+files_name = ['goods1_file','goods2_file','goods3_fine']
+for i in range(3):
+    file_name = files_name[i]
+    file_name = open(file_name,'w')
+    goods_name = goods_list[i]
+    for j in goods_name:
+        files_name.write(j)
+    file_name.close()
 
 
 #This might my interesting and this might be one of the first programme that made by my self
 #Hello ~~~
 #Everything is good and cool~
+    
